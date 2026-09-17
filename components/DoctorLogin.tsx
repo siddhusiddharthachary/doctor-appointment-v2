@@ -1,0 +1,7 @@
+"use client";
+import { useState } from "react";
+export default function DoctorLogin() {
+  const [pin,setPin]=useState(""); const [upiId,setUpiId]=useState(""); const [error,setError]=useState(""); const [loading,setLoading]=useState(false);
+  async function submit(event:React.FormEvent){event.preventDefault();setLoading(true);setError("");const response=await fetch("/api/doctor/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({pin,upiId})});const body=await response.json();setLoading(false);if(!response.ok){setError(body.error||"Login failed.");return;}window.location.href="/doctor/dashboard";}
+  return <div className="login-wrap"><section className="card login-card"><div className="eyebrow">Clinic staff</div><h1>Open dashboard</h1><p className="muted">Enter the clinic PIN and the UPI ID where patients should pay. Local PIN: <strong>2468</strong>.</p><form onSubmit={submit}><label className="field"><span>Clinic PIN</span><input type="password" inputMode="numeric" required value={pin} onChange={e=>setPin(e.target.value)} placeholder="••••" /></label><label className="field"><span>Doctor UPI ID</span><input required autoCapitalize="none" value={upiId} onChange={e=>setUpiId(e.target.value)} placeholder="doctor@upi" /></label><button className="btn btn-primary btn-wide" disabled={loading}>{loading?"Checking…":"Login"}</button></form>{error&&<div className="alert alert-error">{error}</div>}</section></div>;
+}
