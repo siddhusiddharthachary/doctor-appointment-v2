@@ -1,0 +1,13 @@
+{
+  "config": {
+    "clinicName": "Sri Sai Clinic",
+    "doctorName": "Dr. Ravi Kumar",
+    "specialization": "General Physician",
+    "startTime": "17:00",
+    "endTime": "20:00",
+    "avgConsultationMinutes": 10,
+    "maxTokens": 30
+  },
+  "queues": {},
+  "tokens": []
+}

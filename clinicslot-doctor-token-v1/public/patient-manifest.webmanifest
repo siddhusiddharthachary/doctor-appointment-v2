@@ -1,0 +1,15 @@
+{
+  "id": "/clinic?app=patient",
+  "name": "ClinicSlot Patient",
+  "short_name": "ClinicSlot",
+  "description": "Get and track your live clinic token",
+  "start_url": "/clinic?app=patient",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f7f5",
+  "theme_color": "#173a2a",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
